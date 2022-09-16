@@ -6,6 +6,7 @@ import { selectCharacter } from "../../../../Store/Character/characterSelector";
 
 const EpisodePageCharacter = (props) => {
   // debugger;
+  console.log(props);
   const imageCharacter = useSelector(selectCharacter);
   const dispatch = useDispatch();
   const requestImageCharacter = async (image) => {
@@ -17,7 +18,7 @@ const EpisodePageCharacter = (props) => {
   }, []);
 
   return (
-    <>{imageCharacter ? <div>{imageCharacter.image}</div> : <>loading...</>}</>
+    <>{imageCharacter ? <div>{imageCharacter[props.index]}</div> : <>loading...</>}</>
   );
 };
 

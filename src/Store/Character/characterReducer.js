@@ -1,14 +1,14 @@
 import { CHARACTER, ERROR } from "./action";
 
 const initialState = {
-  character: [],
+  characterImages: [],
   errMessage: "",
 };
 
 const characterReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHARACTER:
-      return { ...state, character: action.character };
+      return { ...state, characterImages: [...state.characterImages, action.character.image] };
     case ERROR:
       return { ...state, errMessage: action.errMessage };
     default:

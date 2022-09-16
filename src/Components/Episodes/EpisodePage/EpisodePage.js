@@ -37,11 +37,11 @@ const EpisodePage = () => {
   episode.characters
     ? (characterEpisode = episode.characters.map((img, index) => {
         // debugger;
-        return <EpisodePageCharacter image={img} key={index} />;
+        console.log(index);
+        return <EpisodePageCharacter image={img} key={index} index={index}/>;
       }))
     : (characterEpisode = "loading");
 
-  console.log(episode);
 
   return (
     <>
